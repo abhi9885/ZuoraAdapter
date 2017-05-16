@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<project name="ZuoraAdapterBuild" basedir="." default="main">
+	<property name="src.dir" location="src" />
+	<property name="build.dir" location="build" />
+	<property name="dist.dir" location="dist" />
+	
+    <path id="ZuoraAdapter.classpath">
+        <pathelement location="bin"/>
+    	<pathelement location="C:/Oracle/Middleware/Oracle_Home/jdeveloper/ide/lib/fcpboot.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/soa/modules/oracle.cloud.adapter_12.1.3/cloud-runtime-api.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/soa/modules/oracle.cloud.adapter_12.1.3/cloud-runtime-impl.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/soa/modules/oracle.cloud.adapter_12.1.3/cloud-designtime-api.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/soa/modules/oracle.cloud.adapter_12.1.3/cloud-designtime-impl.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/osb/lib/uitools/oracle.tools.cloud.adapter.sdk.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/osb/lib/uitools/oracle.tools.cloud.plugins.nxsd.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/osb/lib/uitools/oracle.tools.uiobjects.sdk.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/osb/plugins/jdeveloper/extensions/oracle.tools.cloud.adapter.ide.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/jdeveloper/jlib/jle3.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.sca.modeler.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.sca.ui.adapters.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/oracle_common/modules/oracle.xdk/xmlparserv2.jar"/>
+        <pathelement location="../../Cognizant/Adapter/wsdl4j.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/oracle_common/modules/oracle.owasp/xercesImpl.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/wlserver/modules/javax.resource.javax.resource-api.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/oracle_common/modules/oracle.bali.jewt/jewt4.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/jdeveloper/ide/lib/idert.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/jdeveloper/ide/lib/javax-ide.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/jdeveloper/ide/lib/oracle.ide.osgi.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/soa/modules/oracle.cloud.adapter_12.1.3/cloud-connectivity-persistence.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/soa/modules/oracle.cloud.adapter_12.1.3/cloud-connectivity-services.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/soa/modules/oracle.cloud.adapter_12.1.3/oracle.cloud.messaging.api-13.1.0.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/jdeveloper/ide/lib/ide-boot.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/jdeveloper/ide/lib/ide-cache.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/jdeveloper/ide/lib/ide-print-api.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/jdeveloper/ide/extensions/oracle.ide.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/oracle_common/modules/oracle.javatools/javatools-nodeps.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/soa/modules/oracle.soa.adapter_11.1.1/adapter.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/osb/plugins/jdeveloper/extensions/oracle.sb.tooling.ide.appserverbrowser.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/osb/plugins/jdeveloper/extensions/oracle.sb.tooling.ide.core.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/osb/plugins/jdeveloper/extensions/oracle.sb.tooling.ide.libs.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/osb/plugins/jdeveloper/extensions/oracle.sb.tooling.ide.process.messageflow.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/osb/plugins/jdeveloper/extensions/oracle.sb.tooling.ide.process.stages.logging.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/osb/plugins/jdeveloper/extensions/oracle.sb.tooling.ide.process.stages.publish.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/osb/plugins/jdeveloper/extensions/oracle.sb.tooling.ide.process.stages.routing.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/osb/plugins/jdeveloper/extensions/oracle.sb.tooling.ide.process.stages.ui.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/osb/plugins/jdeveloper/extensions/oracle.sb.tooling.ide.publish.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/osb/plugins/jdeveloper/extensions/oracle.sb.tooling.ide.resources.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/osb/plugins/jdeveloper/extensions/oracle.sb.tooling.ide.resources.service.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/osb/plugins/jdeveloper/extensions/oracle.sb.tooling.ide.sca.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/osb/plugins/jdeveloper/extensions/oracle.sb.tooling.ide.splitjoin.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/osb/plugins/jdeveloper/extensions/oracle.sb.tooling.ide.ui.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/osb/plugins/jdeveloper/extensions/oracle.sb.tooling.ide.ui.xquery.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/osb/plugins/jdeveloper/extensions/oracle.soa.tools.ide.debug.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/soa/modules/oracle.adapter.ext_12.1.2/oracle.adapter.ext.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/soa/modules/oracle.soa.adapter_11.1.1/adapter-reports-mbeans.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/integration/lib/bpm-ide-common.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/integration/lib/bpm-workflow-datacontrol.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/integration/lib/oracle.bpel.shared.datamodels.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/integration/lib/oracle.bpel.v1.datamodels.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/integration/lib/oracle.bpel.v2.datamodels.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/integration/lib/oracle.bpm.assign.panel.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/integration/lib/oracle.rules.designer.standalone.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/integration/lib/oracle.soa.tools.graph.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/integration/lib/oracle.soa.tools.resources.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/integration/lib/oracle.soa.tools.widgets.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/integration/lib/oraesbjdev.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/integration/lib/sca-schema10xbean.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/integration/lib/sca-schema11xbean.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/integration/lib/sca-sensorsxbean.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/integration/lib/sca-testxbean.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/external/oracle.external.bpa.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/external/oracle.external.soa.jrf-wsclient-extended.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/external/oracle.external.soa.runtime.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/external/oracle.external.soa.xdk.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oer-dt-api-soa.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oer-dt-impl-soa.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.adapter.mft.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.adapters.jdeworld.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.bam.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.bpel.designer.shared.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.bpel.designer.shared.plugins.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.bpel.v1.designer.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.bpel.v1.designer.plugins.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.bpel.v2.designer.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.bpel.v2.designer.plugins.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.bpm.analytics.metrics.ui.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.bpm.core.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.bpm.dvm.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.bpm.events.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.bpm.fusion.ui.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.bpm.mapper.multi.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.bpm.nxsd.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.bpm.rules.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.bpm.rules.plugins.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.bpm.ui.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.bpm.workflow.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.bpm.xref.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.external.soa.wls.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.jdeveloper.rcoeradapter-soa.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.oerannotations.editor.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.resourceexplorer.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.resourceexplorer.oer.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.resourceexplorer.uddi.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.sca.mediator.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.sca.spring2.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.sca.ui.adapters.sap.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.sca.ui.adapters.siebel.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.soa.faultpolicy.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.soa.template.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.soa.tools.debugger.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.soabrowser.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.soamds.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.soamds.transfer.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.soaoerannotations.xbeanmodel.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.xml.chooser.jar"/>
+        <pathelement location="C:/Oracle/Middleware/Oracle_Home/soa/plugins/jdeveloper/extensions/oracle.xquery.mapper.jar"/>
+        <pathelement location="../../CLOBtext/Library/apache/commons-io-2.4.jar"/>
+        <pathelement location="../../CLOBtext/Library/apache/commons-lang3-3.3.2.jar"/>
+        <pathelement location="../../Cognizant/Adapter/bayeux-api-2.5.0.jar"/>
+        <pathelement location="../../Cognizant/Adapter/cometd-java-client-2.5.0.jar"/>
+        <pathelement location="../../Cognizant/Adapter/cometd-java-common-2.5.0.jar"/>
+        <pathelement location="../../Cognizant/Adapter/cometd-java-server-2.5.0.jar"/>
+        <pathelement location="../../Cognizant/Adapter/com.oracle.webservices.orawsdl-api.jar"/>
+        <pathelement location="../../Cognizant/Adapter/jackson-all-1.9.0.jar"/>
+        <pathelement location="../../Cognizant/Adapter/jetty-client-8.0.0.M0.jar"/>
+        <pathelement location="../../Cognizant/Adapter/org.eclipse.jetty.io.jar"/>
+        <pathelement location="../../Cognizant/Adapter/jetty-http-8.0.0.M3.jar"/>
+        <pathelement location="../../Cognizant/Adapter/org.eclipse.jetty.util.jar"/>
+    </path>
+
+	<target name="clean">
+		<delete dir="${build.dir}" failonerror="false"/>
+		<delete dir="${dist.dir}" failonerror="false"/>
+	</target>
+
+	<target name="main" depends="clean, dist">
+		<echo>Building the .jar file.</echo>
+	</target>
+
+	<target name="build">
+		<mkdir dir="${build.dir}" />
+	</target>
+
+	<target name="compile" depends="build">
+		<javac srcdir="${src.dir}" destdir="${build.dir}">
+			<classpath refid="ZuoraAdapter.classpath"/>
+		</javac>
+		<copy todir="${build.dir}/META-INF">
+		    <fileset dir="${src.dir}/META-INF"/>
+		</copy>
+		<copy todir="${build.dir}/resources">
+		    <fileset dir="${src.dir}/resources"/>
+		</copy>
+		<copy file="${src.dir}/com/cognizant/ipm/adapter/ResourceBundle.properties" todir="${build.dir}/com/cognizant/ipm/adapter"/>
+		<copy file="${src.dir}/com/cognizant/ipm/adapter/Adapter16x16.png" todir="${build.dir}/com/cognizant/ipm/adapter"/>
+		<copy file="${src.dir}/com/cognizant/ipm/adapter/Adapter20x20.png" todir="${build.dir}/com/cognizant/ipm/adapter"/>
+	</target>
+
+	<target name="dist" depends="compile">
+	<!--<jar manifest="${src.dir}/META-INF/MANIFEST.MF" jarfile="${dist.dir}/ZuoraAdapter.jar" basedir="${build.dir}" />-->
+		<jar manifest="${src.dir}/META-INF/MANIFEST.MF" jarfile="C:/Oracle/Middleware/Oracle_Home/jdeveloper/dropins/ZuoraAdapter.jar" basedir="${build.dir}" />
+		<jar manifest="${src.dir}/META-INF/MANIFEST.MF" jarfile="C:/Oracle/Middleware/Oracle_Home/soa/soa/modules/oracle.cloud.adapter_12.1.3/ZuoraAdapter.jar" basedir="${build.dir}" />
+		<jar manifest="${src.dir}/META-INF/MANIFEST.MF" jarfile="C:/Oracle/Middleware/Oracle_Home/user_projects/domains/cloud_domain/lib/ZuoraAdapter.jar" basedir="${build.dir}" />
+		<jar manifest="${src.dir}/META-INF/MANIFEST.MF" jarfile="C:/Users/upendra/AppData/Roaming/JDeveloper/system12.2.1.1.42.160607.2047/DefaultDomain/lib/ZuoraAdapter.jar" basedir="${build.dir}" />
+	</target>
+</project>

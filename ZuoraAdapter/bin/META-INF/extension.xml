@@ -1,0 +1,27 @@
+<extension id="com.cognizant.ipm.adapter" version="1.0.0" esdk-version="2.0" rsbundle-class="com.cognizant.ipm.adapter.wizard.CloudResourceBundl" xmlns="http://jcp.org/jsr/198/extension-manifest">
+	<name>ZuoraAdapter</name>
+	<owner>Cognizant</owner>
+	<trigger-hooks xmlns="http://xmlns.oracle.com/ide/extension">
+		<triggers>
+			<sca-config-hook xmlns="http://xmlns.oracle.com/ide/extension/sca-config">
+				<adapter-types>
+					<adapter-type technology-keys="SOA,BPM">
+						<name>ZuoraAdapter</name>
+						<folder-name>Cloud Adapters</folder-name>
+						<category-name>Cloud</category-name>
+						<description>Cloud Adapter to ZuoraCRM</description>
+						<inbound>true</inbound>
+						<outbound>true</outbound>
+						<binding-type>jca</binding-type>
+						<binding-subtype>ZuoraAdapter</binding-subtype>
+						<implementation-class>com.cognizant.ipm.adapter.wizard.CloudScaEndpointImpl</implementation-class>
+						<icon16x16>/com/cognizant/ipm/adapter/Adapter16x16.png</icon16x16>
+						<icon20x20>/com/cognizant/ipm/adapterr/Adapter20x20.png
+						</icon20x20>
+						<!-- policy-attachment>ws</policy-attachment -->
+					</adapter-type>
+				</adapter-types>
+			</sca-config-hook>
+		</triggers>
+	</trigger-hooks>
+</extension>

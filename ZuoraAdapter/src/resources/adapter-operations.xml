@@ -1,0 +1,26 @@
+<operationconfig>
+    <types>
+        <type name="CORE">
+                <operation>login</operation>
+                <operation>getUserInfo</operation>
+                <operation>billingPreview</operation>
+                <operation>subscribe</operation>
+                <operation>calculateChargeMetrics</operation>
+                <operation>rasd</operation>
+        </type>
+        <type name="CRUD">
+                <operation>generate</operation>
+                <operation>amend</operation>
+                <operation>execute</operation>
+                <operation>create</operation>
+                <operation>delete</operation>
+                <operation>update</operation>
+        </type>
+        <type name="ZOQL">
+                <operation>query</operation>
+                <operation>queryMore</operation>
+        </type>
+        <type name="MISC">
+        </type>
+    </types>
+</operationconfig>
